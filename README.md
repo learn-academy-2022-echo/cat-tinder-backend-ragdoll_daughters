@@ -1,24 +1,14 @@
-# README
+Positive Fail for INDEX:
+Failures:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  1) Cats GET /index gets a list of cats
+     Failure/Error: get '/cats'
+     
+     ActionController::MissingExactTemplate:
+       CatsController#index is missing a template for request formats: text/html
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Positive Fail for CREATE:
+1) POST /create creates a cat
+     Failure/Error: expect(response).to have_http_status(200)
+       expected the response to have status code 200 but it was 204
+     # ./spec/requests/cats_request_spec.rb:44:in `block (2 levels) in <top (required)>'
